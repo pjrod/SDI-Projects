@@ -11,9 +11,9 @@ var smallBoat = "25 RBS",
 ;
 var hoursToLocation = 2; //Needed for procedure if fuel tanks are needed
 var windSpeed = 25; // local wind speed can change to affect outcome of story
-var crewGarScore = 24; // Gar Model Score can chage to affect status of situation 
+var crewGarScore = 2; // Gar Model Score can chage to affect status of situation 
 var searchPattern = "Expanding Square Search";
-var garModel = ["Green", "Amber", "Red"];
+
 
 
 
@@ -49,27 +49,40 @@ var seaState = function(seaState1, seaState2){
 // Main Code
 var newSeasState = seaState(0, 2);
 console.log(newSeasState);
+console.log("Next we needed to check the wind status to see if we should go offshore or inland");
 
+// Number function
+do {var knots = 5;
+	if (knots >= 10) {
+		console.log("The wind speed is " + knots + " Knots, we will go inland it is a safer route.");
+	} else {
+		console.log("The wind is not that high today");
+	};
+} while (knots >=10) {
+	console.log("The wind speed is " + knots + " Knots, we will go offshore, it is a faster route.");
+	knots = knots -5;
+};
 
-//if (wakeUpTime <= 6) {
-//			wakeUpTime = wakeUpTime + 0;
-//			console.log("Since " + coastieOne + " and the " + coastieSection + " woke up at " + wakeUpTime + "AM, the " + coastieSection + " and him were ready for action.");
-//		} else {
-//			console.log("Since " + coastieOne + " and the " + coastieSection + " woke up at " + wakeUpTime + "AM, they were not ready for the call.");
-//		};
+// Main Code
+console.log("Once we figured out wich boat was getting under way everyone proceeded to the boat.");
+console.log(coastie + " and the " + coastieCrew + " did a quick boat check and proceeded to do the GAR Model.");
 
-//var division = function(firstNumber, secondNumber){
-//	var outcome = firstNumber/secondNumber;
+// Array Function
+// garModel = ["green", "amber", "red"];
+var garModel = ["Green", "Amber", "Red" ];
+var numberRange = [1,2,3]; 
+var	garModel2 = function(){
+	for (var i=0; i < i.length; i++)
+	var gar = garModel[i],
+		numberThisRange = numberRange[i];
+	console.log("Conducted GAR score of " + numberThisRange + " which puts us in the " + gar + ".");
+	for (var num = 2; num < numberThisRange; num--){
+		var numberRemaining = numberThisRange -num;
+		return "GAR score of " + num + " in the " + numberRemaining;
+	}
+	console.log("we are in the " + gar + ".");
 	
-//	return outcome;
+};
+console.log(garModel2(2));
+
 	
-//};
-
-//var divOutcome = division(10,5);
-
-//console.log("The answer is " + divOutcome);
-
-//var getArea = function () {
-//	console.log ("getArea Fired!");
-//};
-//getArea();
